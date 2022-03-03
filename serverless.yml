@@ -1,0 +1,30 @@
+org: devongermano
+app: verb-coding-challenge-serverless
+console: true
+service: verb-coding-challenge-serverless
+frameworkVersion: '3'
+useDotenv: true
+provider:
+  name: aws
+  runtime: nodejs14.x
+functions:
+  graphql:
+    handler: src/server.gqlHandler
+    events:
+      - http:
+          path: graphql
+          method: post
+          cors: true
+      - http:
+          path: graphql
+          method: get
+          cors: true
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+custom:
+  webpack:
+    includeModules: true
+  serverless-offline:
+    noPrependStageInUrl: true

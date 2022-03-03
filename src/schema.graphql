@@ -1,0 +1,45 @@
+type Mutation {
+    plantTree(enterpriseId: String!, projectId: String!, user: String!, treeCount: Int!): Tree!
+}
+
+type Query {
+    project(id: ID!): ProjectDetails
+    allProjects: [Project]
+    searchProjects(substring: String!): [Project]
+    tree(uuid: ID!): Tree
+}
+
+type Project {
+    id: ID!
+    name: String!
+    reforestationProjectDescription_en: String!
+    reforestationProjectState_en: String!
+    reforestationProjectCountry_en: String!
+    reforestationProjectWebsite_en: String!
+    reforestationCompanyName_en: String!
+}
+
+type ProjectDetails {
+    created: String!
+    updated: String!
+    id: ID!
+    name: String!
+    description: String!
+    reforestationCompanyName_en: String!
+    reforestationCompanyAddress_en: String!
+    reforestationCompanyWebsite_en: String!
+    reforestationProjectCountry_en: String!
+    reforestationProjectDescription_en: String!
+    reforestationProjectImageURL_en: String!
+    reforestationProjectState_en: String!
+    reforestationProjectWebsite_en: String!
+}
+
+type Tree {
+    projectId: String!
+    created: String!
+    uuid: String!
+    user: String!
+    treeCount: Int!,
+    enterpriseId: String!
+}

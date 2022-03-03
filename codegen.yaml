@@ -1,0 +1,8 @@
+schema: ./src/schema.graphql
+generates:
+  ./src/generated/graphql.ts:
+    config:
+      contextType: ../util#Context
+    plugins:
+      - typescript
+      - typescript-resolvers
