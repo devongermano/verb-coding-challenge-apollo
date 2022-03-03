@@ -5,6 +5,8 @@
     "@graphql-codegen/typescript-resolvers": "^2.5.2",
     "@graphql-tools/utils": "^8.6.2",
     "@types/cls-hooked": "^4.3.3",
+    "apollo-datasource-http": "^0.19.0",
+    "apollo-datasource-rest": "^3.5.1",
     "apollo-server": "^3.6.3",
     "apollo-server-core": "^3.6.3",
     "apollo-server-express": "^3.6.3",

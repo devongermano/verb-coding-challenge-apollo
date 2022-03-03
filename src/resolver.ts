@@ -52,13 +52,12 @@ export const typeDefs = gql`
 
 export const resolvers: IResolvers = {
     Query: {
-        project: (_, args, context) => context.dataSources.projectProvider.getProject(args),
-        allProjects: (_, args, context) => context.dataSources.projectProvider.getProjects(),
-        searchProjects: (_, args, context) => context.dataSources.projectProvider.searchProjects(args),
+        project: (_, args, context) => context.dataSources.digitalHumaniApi.getProject(args['id']),
+        allProjects: (_, args, context) => context.dataSources.digitalHumaniApi.getProjects(),
+        searchProjects: (_, args, context) => context.dataSources.digitalHumaniApi.searchProjects(args),
 
-        tree: (_, args, context) => context.dataSources.treeProvider.getTree(args),
     },
     Mutation: {
-        plantTree: (_, args, context) => context.dataSources.treeProvider.plantTree(args),
+        plantTree: (_, args, context) => context.dataSources.digitalHumaniApi.plantTree(args['enterpriseId'], args['projectId'], args['user'], args['treeCount']),
     }
 };

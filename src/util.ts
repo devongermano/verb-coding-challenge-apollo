@@ -1,8 +1,7 @@
-import { ProjectProvider, TreeProvider } from "./providers";
+import { DigitalHumaniApi } from "./dataSources";
 
 export interface Context {
     dataSources: {
-        projectProvider: ProjectProvider,
-        treeProvider: TreeProvider,
+        digitalHumaniApi: DigitalHumaniApi
     }
 }

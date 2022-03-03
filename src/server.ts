@@ -1,14 +1,11 @@
 import { Context } from "./util";
-import { ProjectProvider, TreeProvider } from "./providers";
+import { DigitalHumaniApi } from "./dataSources";
 import { ApolloServer } from 'apollo-server-lambda';
 import { resolvers, typeDefs } from './resolver';
 
-
-
 const dataSources = (): Context['dataSources'] => {
     return {
-        projectProvider: new ProjectProvider(),
-        treeProvider: new TreeProvider(),
+        digitalHumaniApi: new DigitalHumaniApi(),
     };
 };
 
